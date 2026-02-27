@@ -1,17 +1,10 @@
 # MatrixLib
 A Matrix library written in C++
 
-## How to build
+## How to use
 
-In the library directory, run:
-
-```bash
-$ cmake -DCMAKE_BUILD_TYPE=Release -B build
-$ cmake --build build
-```
-
-Now, put the libMatrix.a file in your project directory and include it with:
+Just include the library as usual:
 
 ```cpp
-#include <matrix.h>
+#include "path/to/lib/matrix.h"
 ```
