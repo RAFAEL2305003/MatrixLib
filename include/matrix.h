@@ -143,6 +143,34 @@ class Matrix
 };
 
 /**
+ * Compare two Matrices
+ *
+ * @param a A Matrix to compare with
+ * @param b Another Matrix
+ * @return true if both matrices are equal, false otherwise
+ */
+template<typename T>
+bool operator==(const Matrix<T>& a, const Matrix<T>& b)
+{
+    auto [a_rows, a_cols] = a.shape();
+    auto [b_rows, b_cols] = b.shape();
+    assert(a_rows == b_rows && a_cols == b_cols);
+
+    for(std::size_t i = 0; i < a_rows; i++)
+    {
+        for(std::size_t j = 0; j < a_cols; j++)
+        {
+            if(a(i, j) != b(i, j))
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+/**
  * Multiply a Matrix for a scalar
  *
  * @param a The Matrix to operate
@@ -176,7 +204,7 @@ Matrix<T> operator+(const Matrix<T>& a, const Matrix<T>& b)
     auto [b_rows, b_cols] = b.shape();
     assert(a_rows == b_rows && a_cols == b_cols);
 
-    Matrix c(a_rows, a_cols);
+    Matrix<T> c(a_rows, a_cols);
     auto [rows, cols] = c.shape();
     for(std::size_t i = 0; i < rows; i++)
     {
