@@ -143,6 +143,30 @@ class Matrix
 };
 
 /**
+ * Creates a identity Matrix
+ *
+ * @param n The order of the Matrix
+ * @return the identity Matrix with order n
+ */
+template<typename T>
+Matrix<T> identity(std::size_t n)
+{
+    Matrix<T> I(n, n);
+    for(std::size_t i = 0; i < n; i++)
+    {
+        for(std::size_t j = 0; j < n; j++)
+        {
+            if(i == j)
+            {
+                I(i, j) = 1;
+            }
+        }
+    }
+
+    return I;
+}
+
+/**
  * Compare two Matrices
  *
  * @param a A Matrix to compare with
