@@ -112,10 +112,8 @@ class Matrix
                 }
             }
 
-            elements = std::move(new_elements);
-            std::swap(rows, cols);
-
-            return *this;
+            Matrix r(rows, cols, new_elements);
+            return r;
         }
 
         /**
