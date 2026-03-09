@@ -19,7 +19,8 @@ int main (int argc, char *argv[]) {
     assert(A == A + Z);
 
     // scalar multiplication
-    assert(0.0 * A == Z);
+    assert(A * 0 == Z);
+    assert(A * 1 == Z);
 
     return 0;
 }
