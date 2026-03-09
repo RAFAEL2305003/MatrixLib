@@ -12,5 +12,11 @@ int main (int argc, char *argv[]) {
 
     // commutativity test
     assert(A + B == B + A);
+
+    Matrix<double> Z(3, 3); // Matrix with all elements equals to 0
+
+    // Identity element
+    assert(A == A + Z);
+
     return 0;
 }
